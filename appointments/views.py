@@ -18,7 +18,10 @@ def add_appointment(request):
         data = json.loads(request.body)
         name = data['name']
         email = data['email']
-        service = data['service']
+        try:
+            service = data['service']
+        except:
+            service = ''
         doctor = data['doctor']
         date = data['date']
         time = data['time']
@@ -60,7 +63,10 @@ def update_appointment(request, id):
         data = json.loads(request.body)
         name = data['name']
         email = data['email']
-        service = data['service']
+        try:
+            service = data['service']
+        except:
+            service = ''
         doctor = data['doctor']
         date = data['date']
         time = data['time']
